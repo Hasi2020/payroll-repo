@@ -1,0 +1,7 @@
+department,tax_percentage
+IT,15
+HR,10
+Finance,12
+Sales,8
+var taxRules = readUrl("classpath:input/tax_rules.csv", "application/csv") 
+               reduce ((item, acc = {}) -> acc ++ {(item.department): (item.tax_percentage / 100)})
